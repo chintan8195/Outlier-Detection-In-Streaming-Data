@@ -5,9 +5,11 @@ Histograms can be viewed as 1-dimensional special cases of grid-based method. In
 the context of multivariate (i.e., d-dimensional) data, a natural generalization is the
 use of grid-structure. Each dimension is partitioned into p equal-width ranges (e.g.,
 pd+1 is roughly equal to w, the window size).
+
 ### Problem Description
 Please implement outlier detection in streaming data using grid-based methodology.You should implement it in Java.
-* Your program should take input from stdin. The input contains a window size w (32-bit integer), a <host>:<port> pair where you receive an input stream of fixed-ddimensional integer data points in a comma separated values (CSV) format with timestamp added in front. Your program should output outliers starting from the(w+1)th input data until end of input stream. Your program should handle concept drift too.
+
+* Your program should take input from stdin. The input contains a window size w (32-bit integer), a host:port pair where you receive an input stream of fixed-ddimensional integer data points in a comma separated values (CSV) format with timestamp added in front. Your program should output outliers starting from the(w+1)th input data until end of input stream. Your program should handle concept drift too.
 
 ### Method
  Data points that have density less than t (e.g., ⎡log p⎤) in any particular grid region are reported as outliers. It is often hard to determine the optimal bin-width well. When the bins are too narrow, the normal
@@ -16,8 +18,9 @@ anomalous data points and high-density regions may be merged into single bin. So
 we need to use small bin-width to find densities of neighboring cells and merge
 neighbor cells with density ≥ t together, and points in isolated cell with density < t
 are reported as outliers. Both p and t are parameters which need to be tuned for the
-application at hand. To handle streaming data with sliding window, we extend
-density to incremental scenarios: 1) the statistic of the newly inserted data point is
-computed, 2) only the density of the affected data points by the newly inserted data
-point in the existing data points in the window are updated, and 3) similarly updated
+application at hand. 
+To handle streaming data with sliding window, we extend
+density to incremental scenarios: 1. the statistic of the newly inserted data point is
+computed, 2. only the density of the affected data points by the newly inserted data
+point in the existing data points in the window are updated, and 3. similarly updated
 the deleted data points.
