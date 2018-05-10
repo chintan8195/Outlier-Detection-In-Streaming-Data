@@ -19,8 +19,7 @@ we need to use small bin-width to find densities of neighboring cells and merge
 neighbor cells with density ≥ t together, and points in isolated cell with density < t
 are reported as outliers. Both p and t are parameters which need to be tuned for the
 application at hand. 
-To handle streaming data with sliding window, we extend
-density to incremental scenarios: 1. the statistic of the newly inserted data point is
-computed, 2. only the density of the affected data points by the newly inserted data
-point in the existing data points in the window are updated, and 3. similarly updated
-the deleted data points.
+To handle streaming data with sliding window, we extend density to incremental scenarios:
+1. the statistic of the newly inserted data point is computed, 
+2. only the density of the affected data points by the newly inserted data point in the existing data points in the window are    updated, and 
+3. similarly updated the deleted data points.
