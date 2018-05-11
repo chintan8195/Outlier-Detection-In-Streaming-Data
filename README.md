@@ -4,7 +4,7 @@ determine sparse regions in the underlying data in order to report outliers
 Histograms can be viewed as 1-dimensional special cases of grid-based method. In
 the context of multivariate (i.e., d-dimensional) data, a natural generalization is the
 use of grid-structure. Each dimension is partitioned into p equal-width ranges (e.g.,
-pd+1 is roughly equal to w, the window size).
+p^d+1 is roughly equal to w, the window size).
 
 ### Problem Description
 Please implement outlier detection in streaming data using grid-based methodology.You should implement it in Java.
